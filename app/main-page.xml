@@ -1,0 +1,11 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="OpenRouter Chat" icon="" />
+    <StackLayout class="p-4">
+        <TextField hint="Enter OpenRouter API Key" text="{{ apiKey }}" secure="true" class="input input-bordered w-full max-w-xs mb-4" />
+        <Button text="Save API Key" tap="{{ saveApiKey }}" class="btn btn-primary mb-4" />
+        <TextField hint="Enter your message" text="{{ userMessage }}" class="input input-bordered w-full max-w-xs mb-4" />
+        <Button text="Send" tap="{{ sendMessage }}" class="btn btn-primary mb-4" isEnabled="{{ !isLoading }}" />
+        <ActivityIndicator busy="{{ isLoading }}" visibility="{{ isLoading ? 'visible' : 'collapsed' }}" />
+        <Label text="{{ aiResponse }}" textWrap="true" class="text-lg" />
+    </StackLayout>
+</Page>
